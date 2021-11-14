@@ -1,24 +1,13 @@
-import { React, useState, useEffect } from "react";
-import { itemsList } from "../data/items";
+import { React } from "react";
 import BuyModal from "./BuyModal";
 import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
-import axios from "axios";
 
 const Cards = (props) => {
-  const {activeBrand, activeProduct} = props;
+  const { items } = props;
   const dispatch = useDispatch();
   const buyHandler = () => dispatch({type: "SHOW"});
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      // const fetchedItems = await axios.get(`http://localhost:5000/lists`);
-      const fetchedItems = itemsList;
-      setItems(fetchedItems);
-    })();
-  }, [activeBrand, activeProduct]);
 
 
   return (
@@ -42,8 +31,7 @@ const Cards = (props) => {
 
 function mapStateToProps(state) {
   return {
-    activeProduct: state.product,
-    activeBrand: state.brand
+    items: state.items,
   };
 }
 

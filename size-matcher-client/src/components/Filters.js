@@ -3,10 +3,14 @@ import { Dropdown } from './Dropdown';
 import { brandList } from '../data/brands'
 import { productList } from '../data/products';
 import { connect } from 'react-redux';
+import { fetchData } from '../data/fetchData';
 
 const Filters = (props) => {
-   const {activeBrand, activeProduct} = props;
-
+  const {activeBrand, activeProduct} = props;
+  
+  if (activeProduct && activeBrand) {
+      fetchData(activeProduct, activeBrand);
+  }
   return (
     <div className="container m-5">
       <div className="row justify-content-center">
