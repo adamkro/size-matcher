@@ -29,7 +29,7 @@ const BuyModal = (props) => {
         <>
         <Modal show={showModal} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Help us know you better</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           <Container><Row className="justify-content-md-center">Which size fit you the best?</Row></Container>
