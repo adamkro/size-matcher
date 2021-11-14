@@ -2,10 +2,11 @@ import React from "react";
 import { itemsList } from "../data/items";
 import BuyModal from "./BuyModal";
 import { Button } from 'react-bootstrap';
-import { store } from "../store";
+import { useDispatch } from 'react-redux';
 
 export const Cards = () => {
-  const buyHandler = () => store.dispatch({type: "SHOW"});
+  const dispatch = useDispatch();
+  const buyHandler = () => dispatch({type: "SHOW"});
   return (
     <div className="row row-cols-1 row-cols-md-3 g-4">
       {itemsList.map((item) => (

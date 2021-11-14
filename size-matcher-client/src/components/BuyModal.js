@@ -1,20 +1,19 @@
 import { React , useState} from 'react'
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Button, ButtonGroup, Container, Modal, Row } from 'react-bootstrap';
-import { store } from '../store';
 import { sizes } from '../data/sizes'
 
 const BuyModal = (props) => {
     const { showModal } = props;
     const [selectedSize, setSelectedSize] = useState("s");
-
+    const dispatch = useDispatch();
     const sizeButtons = sizes.map( size => (
         <Button key={size} onClick={()=>setSelectedSize(size)}>{size}</Button>
     ))
     
-    const handleClose = () => store.dispatch({type: "HIDE"});
+    const handleClose = () => dispatch({type: "HIDE"});
     const onSave = () => {
-        store.dispatch({type: "ADD_SIZE", payload: selectedSize});
+        dispatch({type: "ADD_SIZE", payload: selectedSize});
         handleClose();
     };
 

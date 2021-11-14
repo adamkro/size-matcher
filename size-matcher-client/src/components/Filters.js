@@ -8,10 +8,10 @@ export const Filters = () => {
     <div className="container m-5">
       <div className="row justify-content-center">
         <div className="col-2">
-          <Dropdown options={productList} triggerText="product" />
+          <Dropdown filter="PRODUCT" options={productList} triggerText="product" />
         </div>
         <div className="col-2">
-          <Dropdown options={brandList} triggerText="brands" />
+          <Dropdown filter="BRAND" options={brandList} triggerText="brand" />
         </div>
       </div>
     </div>

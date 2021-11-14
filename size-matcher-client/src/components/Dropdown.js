@@ -1,8 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 
 export const Dropdown = (props) => {
-    const { options, triggerText }  = props;
-    const dummy = ()=> {};
+    const { filter, options, triggerText }  = props;
+    const dispatch = useDispatch();
+    const onFilter = (payload) => dispatch({type: `FILTER_${filter}`, payload})
 
     return (
         <div>
@@ -13,7 +15,7 @@ export const Dropdown = (props) => {
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 {options.map((item) => (
                     <li key={item}>
-                        <button className="dropdown-item" type="button" onClick={dummy}>{item}</button>
+                        <button className="dropdown-item" type="button" onClick={()=>onFilter(item)}>{item}</button>
                     </li>
                 ))}
             </ul>
