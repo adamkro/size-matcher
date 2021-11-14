@@ -8,7 +8,7 @@ const MySizes = (props) => {
   const mySizesItems = sizes.map((size) => (
     <ListGroup.Item key={cnt++}>{size}</ListGroup.Item>
   ));
-  return <ListGroup>{mySizesItems} </ListGroup>;
+  return <ListGroup className='m-3'>{mySizesItems} </ListGroup>;
 };
 
 function mapStateToProps(state) {
