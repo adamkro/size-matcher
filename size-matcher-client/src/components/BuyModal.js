@@ -2,6 +2,7 @@ import { React , useState} from 'react'
 import { connect, useDispatch } from 'react-redux';
 import { Button, ButtonGroup, Container, Modal, Row } from 'react-bootstrap';
 import { sizes } from '../data/sizes'
+import { selectBrand, selectProduct } from '../selectors';
 
 const BuyModal = (props) => {
     const { showModal } = props;
@@ -13,7 +14,14 @@ const BuyModal = (props) => {
     
     const handleClose = () => dispatch({type: "HIDE"});
     const onSave = () => {
-        dispatch({type: "ADD_SIZE", payload: selectedSize});
+        dispatch({
+            type: "ADD_SIZE", 
+            payload: {
+                product: selectProduct(),
+                brand: selectBrand(),
+                size: selectedSize
+            }
+        });
         handleClose();
     };
 

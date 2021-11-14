@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 export const Dropdown = (props) => {
     const { filter, options, triggerText }  = props;
     const dispatch = useDispatch();
-    const onFilter = (payload) => dispatch({type: `FILTER_${filter}`, payload})
+    const onFilter = (payload) => dispatch({type: `SET_${filter}`, payload})
 
     return (
         <div>

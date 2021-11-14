@@ -1,8 +1,9 @@
 import React from "react";
 import { ProgressBar, Container, Row, Col } from "react-bootstrap";
+import { connect } from 'react-redux';
 
-export const RecommendedSize = () => {
-  const recommendedSize = 60; //todo - get from server
+const RecommendedSize = (props) => {
+  const { recommendedSize } = props; //todo - get from server
   return (
     <div>
       <Container
@@ -26,3 +27,12 @@ export const RecommendedSize = () => {
     </div>
   );
 };
+
+function mapStateToProps(state) {
+    return {
+        recommendedSize: state.recommendedSize,
+    };
+  }
+  
+export default connect(mapStateToProps)(RecommendedSize);
+  

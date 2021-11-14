@@ -1,9 +1,7 @@
-import { itemsList } from '../data/items';
-
-export default function items(state = itemsList, action) {
+export default function items(state = [], action) {
     switch (action.type) {
-      case 'ADD_ITEM':
-        return state.concat([action.text])
+      case 'SET_ITEMS':
+        return action.payload
       default:
         return state
     }
