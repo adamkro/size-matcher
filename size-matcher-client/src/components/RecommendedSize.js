@@ -8,7 +8,7 @@ const RecommendedSize = (props) => {
     <div>
       <Container
         fluid
-        className="w-50 p-2 mt-3 mb-2 border border-primary rounded"
+        className="w-50 p-2 mt-3 mb-2 border border-secondary rounded bg-light"
       >
         <h2> We think the best size for you is: </h2>
         <Row>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Footer } from './components/Footer';
+// import Footer from './components/Footer2'
 import Cards from './components/Cards';
 import logo from './logo.png';
 import Filters from './components/Filters';
@@ -17,10 +18,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <MySizes />
       <Filters />
       <RecommendedSize />
       <Cards />
+      <MySizes />
       <Footer></Footer>
     </div>
   );
